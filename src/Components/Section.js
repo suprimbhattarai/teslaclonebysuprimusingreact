@@ -8,7 +8,7 @@ function Section({title,description,backImg,leftBtntext,rightBtntext}) {
     <Fade bottom>
         <ItemText>
             <h1>{title}</h1>
-            <p>{description}</p>
+            <p><a href="">{description}</a></p>
         </ItemText></Fade>
         <Buttons>
         <Fade bottom>
@@ -38,6 +38,12 @@ const ItemText = styled.div`
     padding-top:15vh;
     text-align:center;
     color: #1c1b1b;
+    h1{
+        font-size:35px;
+        margin-top:16px;
+        margin-bottom:12px;
+        font-weight:600;
+    }
 `;
 
 const Buttons = styled.div``
@@ -81,6 +87,5 @@ const DownArrow = styled.img`
     overflow-x: hidden;
     cursor: pointer;
 `
-
 
 export default Section;

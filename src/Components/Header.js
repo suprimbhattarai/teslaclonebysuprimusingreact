@@ -12,11 +12,11 @@ function Header() {
     <Container>
       <a><img src="/images/logo.svg" alt="" /></a>
       <Menu>
-      {cars && cars.map((car,index)=>(<a key={index} href="#">{car}</a>))}
+      {cars && cars.map((car,index)=>(<a key={index} href="">{car}</a>))}
       </Menu>
       <Right>
-        <a href="#">Shop</a>
-        <a href="#">Tesla Account</a>
+        <a href="https://shop.tesla.com/" target="_blank">Shop</a>
+        <a href="https://auth.tesla.com/oauth2/v1/authorize?redirect_uri=https%3A%2F%2Fwww.tesla.com%2Fteslaaccount%2Fowner-xp%2Fauth%2Fcallback&response_type=code&client_id=ownership&scope=offline_access%20openid%20ou_code%20email&audience=https%3A%2F%2Fownership.tesla.com%2F&locale=en-US" target="_blank">Tesla Account</a>
         <MenuIcon onClick={()=>setBurgerStatus(true)}/>
       </Right>
       <Burger show={burgerStatus}>
@@ -36,6 +36,7 @@ function Header() {
 }
 
 const Container = styled.div`
+    margin:7px;
     min-height:60px;
     position:fixed;
     display:flex;
@@ -46,6 +47,13 @@ const Container = styled.div`
     left:0;
     right:0;
     z-index:1;
+    img{
+      cursor:pointer;
+      height: 18px;
+      width:140px;
+      margin:10px 15px;
+      padding:2px 10px;
+    }
 `
 const Menu = styled.div`
     display:flex;
@@ -53,10 +61,15 @@ const Menu = styled.div`
     justify-content:center;
     flex:1;
     a{
-      font-weight:600;
-      text-transform:uppercase;
+      font-size:14px;
+      font-weight:550;
       padding: 0 10px;
       flex-wrap:no-wrap;
+      margin:10px 10px;
+      padding-bottom:8px;
+    }
+    a:hover{
+      border-bottom:2px solid black;
     }
     @media (max-width:815px){
       display:none;
@@ -66,10 +79,16 @@ const Right = styled.div`
     display:flex;
     align-items:center;
     a{
-        font-weight:600;
-        text-transform:uppercase;
-        margin-right:10px;
+      font-size:14px;
+      font-weight:550;
+      padding: 0 10px;
+      flex-wrap:no-wrap;
+      margin:10px 10px;
+      padding-bottom:5px;
       }
+    a:hover{
+      border-bottom:2px solid black;
+    }
 `
 const MenuIcon = styled(MenuOutlinedIcon)`
       cursor:pointer;

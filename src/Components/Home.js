@@ -12,6 +12,7 @@ function Home() {
         <Section title="Solar Panel" description="Lowest Cost Solar Panels in America" backImg="/images/solar-panel.jpg" leftBtntext="Order Now" rightBtntext="Learn More"/>
         <Section title="Solar Roof" description="Produce Clean Energy From Your Roof" backImg="/images/solar-roof.jpg" leftBtntext="Order Now" rightBtntext="Learn More"/>
         <Section title="Accessories" description="" backImg="/images/accessories.jpg" leftBtntext="Shop Now"/>
+        <Footer><p>@SuprimBhattarai-2022</p></Footer>
     </Container>
   )
 }
@@ -20,4 +21,15 @@ export default Home
 
 const Container = styled.div`
     height: 100vh;
+`
+const Footer = styled.div`
+      padding-bottom:10px;
+      text-align:center;
+    p{
+      font-weight:600;
+      cursor:pointer;
+    }
+    p:hover{
+      opacity:0.9;
+    }
 `
